@@ -1,20 +1,11 @@
-package com.ali;
+package com.asgar;
 
-import org.springframework.context.annotation.Configuration;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 @Component
 public class Product {
     private String name ;
-    private long price ;
-
-    public double getPrice() {
-        return price;
-    }
-
-    public void setPrice(long price) {
-        this.price = price;
-    }
 
     public String getName() {
         return name;
@@ -28,7 +19,6 @@ public class Product {
     public String toString() {
         return "Product{" +
                 "name='" + name + '\'' +
-                ", price=" + price +
                 '}';
     }
 }

@@ -1,5 +1,8 @@
 package com.ali;
 
+import org.springframework.stereotype.Component;
+
+@Component
 public class User {
     private String name;
     private String lastName;
