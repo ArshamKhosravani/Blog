@@ -24,8 +24,8 @@ public class test {
 		
 		type.setTitle("Lecturer");
 	
-		m.setName("Mostafa");
-		m.setFamily("Anbarmoo");
+		m.setName("mamad");
+		m.setFamily("mohammadi");
 		m.setType(type);
 		
 		
