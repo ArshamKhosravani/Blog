@@ -10,9 +10,8 @@ import xmlstrategy.MemberType;
 
 @Configuration
 //@ImportResource({"spring.xml"})
-@ComponentScan(basePackages="xmlstrategy")
-public class config
-{
+@ComponentScan(basePackages = "xmlstrategy")
+public class config {
 
 	
 	/*@Bean
@@ -26,6 +25,6 @@ public class config
 	{
 		return new MemberType();
 	}*/
-	
-	
+
+
 }

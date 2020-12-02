@@ -1,18 +1,20 @@
-package com.blog;
+package com.mapsa.blog.model;
 
 import javax.persistence.*;
 import java.sql.Time;
 
 @Entity
-@Table(name = "COMMENTS", schema = "CUSTOMER", catalog = "")
-public class CommentsEntity {
+@Table(name = "PAPER", schema = "CUSTOMER", catalog = "")
+public class PaperEntity {
     private long id;
-    private String code;
     private String body;
-    private String name;
-    private String creator;
+    private String title;
     private Time currentDate;
+    private Time releaseDate;
+    private Time modifyDate;
+    private String tags;
     private Integer likes;
+    private Integer rate;
     private String description;
     private long lockVersion;
 
@@ -27,16 +29,6 @@ public class CommentsEntity {
     }
 
     @Basic
-    @Column(name = "CODE")
-    public String getCode() {
-        return code;
-    }
-
-    public void setCode(String code) {
-        this.code = code;
-    }
-
-    @Basic
     @Column(name = "BODY")
     public String getBody() {
         return body;
@@ -47,23 +39,13 @@ public class CommentsEntity {
     }
 
     @Basic
-    @Column(name = "NAME")
-    public String getName() {
-        return name;
+    @Column(name = "TITLE")
+    public String getTitle() {
+        return title;
     }
 
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    @Basic
-    @Column(name = "CREATOR")
-    public String getCreator() {
-        return creator;
-    }
-
-    public void setCreator(String creator) {
-        this.creator = creator;
+    public void setTitle(String title) {
+        this.title = title;
     }
 
     @Basic
@@ -77,6 +59,36 @@ public class CommentsEntity {
     }
 
     @Basic
+    @Column(name = "RELEASE_DATE")
+    public Time getReleaseDate() {
+        return releaseDate;
+    }
+
+    public void setReleaseDate(Time releaseDate) {
+        this.releaseDate = releaseDate;
+    }
+
+    @Basic
+    @Column(name = "MODIFY_DATE")
+    public Time getModifyDate() {
+        return modifyDate;
+    }
+
+    public void setModifyDate(Time modifyDate) {
+        this.modifyDate = modifyDate;
+    }
+
+    @Basic
+    @Column(name = "TAGS")
+    public String getTags() {
+        return tags;
+    }
+
+    public void setTags(String tags) {
+        this.tags = tags;
+    }
+
+    @Basic
     @Column(name = "LIKES")
     public Integer getLikes() {
         return likes;
@@ -84,6 +96,16 @@ public class CommentsEntity {
 
     public void setLikes(Integer likes) {
         this.likes = likes;
+    }
+
+    @Basic
+    @Column(name = "RATE")
+    public Integer getRate() {
+        return rate;
+    }
+
+    public void setRate(Integer rate) {
+        this.rate = rate;
     }
 
     @Basic
@@ -111,16 +133,18 @@ public class CommentsEntity {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
 
-        CommentsEntity that = (CommentsEntity) o;
+        PaperEntity that = (PaperEntity) o;
 
         if (id != that.id) return false;
         if (lockVersion != that.lockVersion) return false;
-        if (code != null ? !code.equals(that.code) : that.code != null) return false;
         if (body != null ? !body.equals(that.body) : that.body != null) return false;
-        if (name != null ? !name.equals(that.name) : that.name != null) return false;
-        if (creator != null ? !creator.equals(that.creator) : that.creator != null) return false;
+        if (title != null ? !title.equals(that.title) : that.title != null) return false;
         if (currentDate != null ? !currentDate.equals(that.currentDate) : that.currentDate != null) return false;
+        if (releaseDate != null ? !releaseDate.equals(that.releaseDate) : that.releaseDate != null) return false;
+        if (modifyDate != null ? !modifyDate.equals(that.modifyDate) : that.modifyDate != null) return false;
+        if (tags != null ? !tags.equals(that.tags) : that.tags != null) return false;
         if (likes != null ? !likes.equals(that.likes) : that.likes != null) return false;
+        if (rate != null ? !rate.equals(that.rate) : that.rate != null) return false;
         if (description != null ? !description.equals(that.description) : that.description != null) return false;
 
         return true;
@@ -129,12 +153,14 @@ public class CommentsEntity {
     @Override
     public int hashCode() {
         int result = (int) (id ^ (id >>> 32));
-        result = 31 * result + (code != null ? code.hashCode() : 0);
         result = 31 * result + (body != null ? body.hashCode() : 0);
-        result = 31 * result + (name != null ? name.hashCode() : 0);
-        result = 31 * result + (creator != null ? creator.hashCode() : 0);
+        result = 31 * result + (title != null ? title.hashCode() : 0);
         result = 31 * result + (currentDate != null ? currentDate.hashCode() : 0);
+        result = 31 * result + (releaseDate != null ? releaseDate.hashCode() : 0);
+        result = 31 * result + (modifyDate != null ? modifyDate.hashCode() : 0);
+        result = 31 * result + (tags != null ? tags.hashCode() : 0);
         result = 31 * result + (likes != null ? likes.hashCode() : 0);
+        result = 31 * result + (rate != null ? rate.hashCode() : 0);
         result = 31 * result + (description != null ? description.hashCode() : 0);
         result = 31 * result + (int) (lockVersion ^ (lockVersion >>> 32));
         return result;

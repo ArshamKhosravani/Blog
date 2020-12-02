@@ -1,4 +1,4 @@
-package com.blog;
+package com.mapsa.blog.model;
 
 import javax.persistence.*;
 

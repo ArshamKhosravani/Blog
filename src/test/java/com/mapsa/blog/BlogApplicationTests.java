@@ -1,10 +1,10 @@
-package com.mapsa.springboot1;
+package com.mapsa.blog;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class Springboot1ApplicationTests {
+class BlogApplicationTests {
 
     @Test
     void contextLoads() {

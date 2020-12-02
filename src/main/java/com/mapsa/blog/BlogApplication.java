@@ -1,13 +1,13 @@
-package com.mapsa.springboot1;
+package com.mapsa.blog;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class Springboot1Application {
+public class BlogApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(Springboot1Application.class, args);
+        SpringApplication.run(BlogApplication.class, args);
     }
 
 }
